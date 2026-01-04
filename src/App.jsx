@@ -6,7 +6,6 @@ import About from './components/About';
 import Events from './components/Events';
 import Coordinators from './components/Coordinators';
 import Registration from './components/Registration';
-import Schedule from './components/Schedule';
 import Footer from './components/Footer';
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
           <Hero />
           <About />
           <Events />
-          <Schedule />
           <Coordinators />
           <Registration />
           <Footer />

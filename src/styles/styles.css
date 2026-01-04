@@ -560,6 +560,7 @@ section {
     animation: fadeIn 1.2s ease-out forwards;
 }
 
+
 /* Mobile Nav Toggle Animation */
 .navbar-toggler div {
     transition: var(--transition-smooth);
@@ -571,4 +572,32 @@ section {
 
 .navbar-toggler:not(.collapsed) div:last-child {
     transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Navbar Styles */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(7, 7, 7, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        border: 1px solid var(--border-glass);
+        text-align: center;
+    }
+
+    .navbar-nav {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+    }
+
+    .btn-primary-custom {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
 }

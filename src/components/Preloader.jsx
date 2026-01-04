@@ -1,64 +1,70 @@
 import React, { useEffect, useState } from 'react';
 
 const Preloader = ({ onLoaded }) => {
-    const [loaded, setLoaded] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [fade, setFade] = useState(false);
 
     useEffect(() => {
-      
-        const handleLoad = () => {
-            setLoaded(true);
-            setTimeout(() => {
-                if (onLoaded) onLoaded();
-            }, 500); 
-        };
-
-       
-        if (document.readyState === 'complete') {
-            setTimeout(handleLoad, 1500); 
-        } else {
-            window.addEventListener('load', handleLoad);
-            
-            setTimeout(handleLoad, 2000);
-        }
-
-        return () => window.removeEventListener('load', handleLoad);
+        const interval = setInterval(() => {
+            setProgress(prev => {
+                if (prev >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => setFade(true), 500);
+                    setTimeout(() => onLoaded(), 1100);
+                    return 100;
+                }
+                return prev + Math.floor(Math.random() * 15) + 1;
+            });
+        }, 100);
+        return () => clearInterval(interval);
     }, [onLoaded]);
 
-    if (!onLoaded) return null; 
-
     return (
-        <div className={`ctn-preloader ${loaded ? 'loaded' : ''}`} id="ctn-preloader" style={{ display: loaded ? 'none' : 'block' }}>
-            {/* Matrix-style particles */}
-            <div className="particle-grid"></div>
-
-            {/* Preloader animation */}
-            <div className="animation-preloader">
-                {/* Spinner */}
-                <div className="spinner"></div>
-
-                {/* Loading text */}
-                <div className="txt-loading">
-                    <span className="letters-loading">L</span>
-                    <span className="letters-loading">O</span>
-                    <span className="letters-loading">A</span>
-                    <span className="letters-loading">D</span>
-                    <span className="letters-loading">I</span>
-                    <span className="letters-loading">N</span>
-                    <span className="letters-loading">G</span>
-                </div>
-                <div className="txt-loading">
-                    <span className="letters-loading">M</span>
-                    <span className="letters-loading">A</span>
-                    <span className="letters-loading">R</span>
-                    <span className="letters-loading">K</span>
-                    <span className="letters-loading">-</span>
-                    <span className="letters-loading">U</span>
-                    <span className="letters-loading">S'</span>
-                    <span className="letters-loading">26</span>
-                </div>
-
-                <p>Initializing System...</p>
+        <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: '#070707',
+            zIndex: 9999,
+            display: fade ? 'none' : 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: fade ? 0 : 1,
+            transition: 'opacity 0.6s ease-in-out'
+        }}>
+            <h1 style={{ 
+                fontFamily: 'Syncopate', 
+                fontSize: '1rem', 
+                letterSpacing: '1em', 
+                color: '#fff',
+                marginBottom: '2rem'
+            }}>MARKUS26</h1>
+            <div style={{
+                width: '200px',
+                height: '1px',
+                background: 'rgba(255,255,255,0.1)',
+                position: 'relative'
+            }}>
+                <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    height: '100%',
+                    width: `${Math.min(progress, 100)}%`,
+                    background: '#fff',
+                    transition: 'width 0.2s ease-out'
+                }}></div>
             </div>
+            <span style={{
+                fontFamily: 'Outfit',
+                fontSize: '0.8rem',
+                marginTop: '1rem',
+                color: 'rgba(255,255,255,0.4)',
+                letterSpacing: '0.2em'
+            }}>{Math.min(progress, 100)}%</span>
         </div>
     );
 };

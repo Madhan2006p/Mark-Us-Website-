@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -11,53 +20,35 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }, [isOpen]);
-
-   
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (isOpen && !e.target.closest('.navbar-collapse') && !e.target.closest('.navbar-toggler')) {
-                closeMenu();
-            }
-        };
-        document.addEventListener('click', handleClickOutside);
-        return () => document.removeEventListener('click', handleClickOutside);
-    }, [isOpen]);
-
     return (
-        <nav className="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
+        <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled' : ''}`}>
             <div className="container">
-                <a className="navbar-brand" href="#hero" onClick={closeMenu}>
-                    <i className="bi bi-cpu-fill me-2"></i>Mark Us – 26
+                <a className="navbar-brand" href="#hero">
+                    MARKUS<span style={{ opacity: 0.4 }}>26</span>
                 </a>
+                
                 <button
                     className={`navbar-toggler ${isOpen ? '' : 'collapsed'}`}
                     type="button"
                     onClick={toggleMenu}
-                    aria-expanded={isOpen}
+                    style={{ border: 'none', background: 'transparent' }}
                 >
-                    <span className="custom-toggler">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
+                    <div style={{ width: 25, height: 2, background: '#fff', marginBottom: 5 }}></div>
+                    <div style={{ width: 25, height: 2, background: '#fff' }}></div>
                 </button>
 
-                <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
+                <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
                     <ul className="navbar-nav ms-auto">
-                        <li className="nav-item"><a className="nav-link" href="#hero" onClick={closeMenu}>Home</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#about" onClick={closeMenu}>About</a></li>
-                      
-                        <li className="nav-item"><a className="nav-link" href="#events" onClick={closeMenu}>Events</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#schedule" onClick={closeMenu}>Schedule</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#coordinators" onClick={closeMenu}>Team</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#" onClick={closeMenu}>Contact</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#hero" onClick={closeMenu}>HOME</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#about" onClick={closeMenu}>FOUNDATION</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#events" onClick={closeMenu}>COMPETITION</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#schedule" onClick={closeMenu}>TIMELINE</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#coordinators" onClick={closeMenu}>SQUAD</a></li>
+                        <li className="nav-item">
+                            <a href="#registration" className="btn-primary-custom ms-lg-4" style={{ padding: '0.6rem 2rem', fontSize: '0.75rem' }} onClick={closeMenu}>
+                                REGISTER
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

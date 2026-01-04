@@ -1,75 +1,53 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Registration = () => {
     return (
         <section id="registration">
             <div className="container">
-                <div className="title-container text-center">
-                    <h2 className="section-title">Registration Pass</h2>
-                    <p className="reg-subtitle-unique">Experience the Future of Innovation</p>
+                <div className="section-header text-center">
+                    <motion.span 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        className="section-label"
+                    >
+                        Access
+                    </motion.span>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="section-title-large"
+                    >
+                        Secure Your <br /> Entry Pass.
+                    </motion.h2>
                 </div>
 
-                <div className="ticket-portal-wrapper">
-                    <div className="cyber-ticket">
-                        {/* Ticket Main Body */}
-                        <div className="ticket-main">
-                            <div className="ticket-decoration">MARKUS – 26</div>
-                            <div className="ticket-content">
-                                <div className="event-meta-row">
-                                    <span className="entry-tag">VIBE: TECH & INNOVATION</span>
-                                    <span className="entry-status">REGISTRATION OPEN</span>
+                <div className="d-flex justify-content-center">
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="glass-container"
+                        style={{ maxWidth: '900px', width: '100%', padding: '0' }}
+                    >
+                        <div className="row g-0">
+                            <div className="col-md-12" style={{ padding: '4rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
+                                    <span style={{ fontSize: '0.8rem', letterSpacing: '0.4em', opacity: 0.5 }}>OFFICIAL ADMISSION</span>
+                                    <span style={{ color: 'var(--accent-secondary)', fontWeight: '700', fontSize: '0.9rem' }}>REGISTRATION OPEN</span>
                                 </div>
-                                <h3 className="ticket-event-name">MARKUS -26 SYMPOSIUM</h3>
-                                <p className="ticket-desc">
-                                    Step into the elite circle of technology. Join us for a day of competitive coding, paper presentations, and technical breakthroughs.
+                                <h3 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1.1 }}>MARKUS – 26 <br /> INTER-COLLEGE SYMPOSIUM</h3>
+                                <p style={{ color: 'var(--text-dim)', marginBottom: '3.5rem', fontWeight: '300', fontSize: '1.2rem', maxWidth: '600px' }}>
+                                    Join the elite circle of technology. Your pass includes access to all technical sessions, non-technical events, and networking lunches. Conducted by the Association of CT-PG.
                                 </p>
-                                <div className="ticket-footer">
-                                    <a href="#events" className="btn-ticket-action">
-                                        <i className="bi bi-ticket-perforated-fill"></i> GET YOUR PASS
-                                    </a>
-                                    <div className="payment-labels">
-                                        <i className="bi bi-wallet2"></i> GPAY • UPI
-                                    </div>
+                                <div className="d-flex align-items-center gap-4 flex-wrap">
+                                    <a href="#events" className="btn-primary-custom" style={{ padding: '1.2rem 3rem' }}>GET YOUR PASS NOW</a>
+                                    <span style={{ fontSize: '0.9rem', opacity: 0.6 }}>Event Date: <span style={{ color: '#fff', fontWeight: 600 }}>24 Jan 2026</span></span>
                                 </div>
                             </div>
                         </div>
-
-                        {/* Ticket Perforation Line */}
-                        <div className="ticket-divider">
-                            <div className="dash-line"></div>
-                            <div className="punch-hole top"></div>
-                            <div className="punch-hole bottom"></div>
-                        </div>
-
-                        {/* Ticket Stub (QR Side) */}
-                        <div className="ticket-stub">
-                            <div className="stub-inner">
-                                <div className="qr-portal-box">
-                                    <img
-                                        src="/images/registration-qr.png"
-                                        alt="QR Code"
-                                        className="stub-qr"
-                                        onError={(e) => {
-                                            e.target.style.display = 'none';
-                                            e.target.nextSibling.style.display = 'block';
-                                        }}
-                                    />
-                                    <i className="bi bi-qr-code-scan stub-qr-icon" style={{ display: 'none' }}></i>
-                                </div>
-                                <div className="stub-info">
-                                    <span className="stub-label">ADMIT ONE</span>
-                                    <div className="stub-data">
-                                        <span className="stub-date">24 Jan</span>
-                                        <span className="stub-year">2026</span>
-                                    </div>
-                                    <div className="serial-number">MSC-PASS-2026</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </motion.div>
                 </div>
-
-
             </div>
         </section>
     );

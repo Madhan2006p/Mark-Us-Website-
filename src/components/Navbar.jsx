@@ -42,7 +42,6 @@ const Navbar = () => {
                         <li className="nav-item"><a className="nav-link" href="#hero" onClick={closeMenu}>HOME</a></li>
                         <li className="nav-item"><a className="nav-link" href="#about" onClick={closeMenu}>FOUNDATION</a></li>
                         <li className="nav-item"><a className="nav-link" href="#events" onClick={closeMenu}>COMPETITION</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#schedule" onClick={closeMenu}>TIMELINE</a></li>
                         <li className="nav-item"><a className="nav-link" href="#coordinators" onClick={closeMenu}>SQUAD</a></li>
                         <li className="nav-item">
                             <a href="#registration" className="btn-primary-custom ms-lg-4" style={{ padding: '0.6rem 2rem', fontSize: '0.75rem' }} onClick={closeMenu}>

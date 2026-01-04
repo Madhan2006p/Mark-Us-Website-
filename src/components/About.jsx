@@ -29,10 +29,10 @@ const About = () => {
         <section id="about" style={{ position: 'relative' }}>
             {/* Some section specific toys */}
             <motion.div 
-                className="toy toy-shape-3"
+                className="toy toy-shape-1"
                 animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                style={{ top: '10%', right: '5%', borderStyle: 'dashed' }}
+                style={{ top: '10%', right: '5%', borderStyle: 'dashed', width: '60px', height: '60px' }}
             />
 
             <div className="container">

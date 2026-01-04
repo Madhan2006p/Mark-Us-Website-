@@ -38,7 +38,7 @@ const Registration = () => {
                                 </div>
                                 <h3 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '2rem', lineHeight: 1.1 }}>MARKUS – 26 <br /> INTER-COLLEGE SYMPOSIUM</h3>
                                 <p style={{ color: 'var(--text-dim)', marginBottom: '3.5rem', fontWeight: '300', fontSize: '1.2rem', maxWidth: '600px' }}>
-                                    Join the elite circle of technology. Your pass includes access to all technical sessions, non-technical events, and networking lunches. Conducted by the Association of CT-PG.
+                                    Your pass includes access to all technical sessions and non-technical events. Conducted by the Association of CT-PG.
                                 </p>
                                 <div className="d-flex align-items-center gap-4 flex-wrap">
                                     <a href="#events" className="btn-primary-custom" style={{ padding: '1.2rem 3rem' }}>GET YOUR PASS NOW</a>

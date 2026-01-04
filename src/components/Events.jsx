@@ -112,7 +112,7 @@ const Events = () => {
             <div className="container">
                 <div className="section-header">
                     <span className="section-label">Competition</span>
-                    <h2 className="section-title-large">Fuel Your <br /> Ambition.</h2>
+                    <h2 className="section-title-large">Fuel &nbsp; Your <br /> Ambition.</h2>
                 </div>
 
                 <div className="mb-5">

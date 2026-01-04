@@ -1,7 +1,7 @@
 /* ============================================
-   MARK US - 26 | AWWWARDS EDITON (ALEXANDER INSPIRED)
-   The Ultimate Design Experience
-   ============================================ */
+    MARK US - 26 | AWWWARDS EDITON (ALEXANDER INSPIRED)
+    The Ultimate Design Experience
+    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
@@ -43,14 +43,6 @@ html.lenis {
     scroll-behavior: auto !important;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-    overflow: hidden;
-}
-
 body {
     background-color: var(--bg-dark);
     font-family: 'Inter', sans-serif;
@@ -71,11 +63,6 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #333;
-    border-radius: 0;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #666;
 }
 
 /* ========== Ambient Background Elements ========== */
@@ -125,11 +112,11 @@ body {
 
 @keyframes blob-float {
     0% {
-        transform: translate(-10%, -10%) rotate(0deg) scale(1);
+        transform: translate(-10%, -10%) scale(1);
     }
 
     100% {
-        transform: translate(10%, 10%) rotate(360deg) scale(1.3);
+        transform: translate(10%, 10%) scale(1.3);
     }
 }
 
@@ -145,14 +132,6 @@ h5 {
     line-height: 1;
 }
 
-.text-gradient {
-    background: linear-gradient(135deg, #fff 0%, #777 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* ========== Navigation ========== */
 .navbar {
     padding: 2.5rem 0;
     background: transparent !important;
@@ -194,10 +173,6 @@ section {
     position: relative;
 }
 
-.section-header {
-    margin-bottom: 8rem;
-}
-
 .section-label {
     font-size: 0.7rem;
     font-weight: 700;
@@ -215,7 +190,7 @@ section {
     letter-spacing: -0.06em;
 }
 
-/* ========== Features/Cards ========== */
+/* ========== Cards ========== */
 .feature-card {
     background: #0f0f0f;
     border: 1px solid #2a2a2a;
@@ -226,19 +201,9 @@ section {
 }
 
 .feature-card:hover {
-    border-color: #555;
-    background: #151515;
-    transform: translateY(-5px);
-}
-
-.faculty-box {
-    border: 2px solid var(--accent-primary) !important;
-    background: rgba(112, 0, 255, 0.05) !important;
-    box-shadow: 0 40px 100px rgba(112, 0, 255, 0.1);
-}
-
-.student-box {
-    border: 1px solid #333 !important;
+    border-color: var(--accent-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-10px);
 }
 
 .feature-icon {
@@ -253,14 +218,34 @@ section {
     color: #fff;
 }
 
-/* ========== Buttons / Boxes ========== */
+/* ========== Lottie Character Container ========== */
+.lottie-hero-char {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    width: 350px;
+    height: 350px;
+    z-index: 2;
+    pointer-events: none;
+    filter: drop-shadow(0 0 30px var(--accent-secondary));
+}
+
+@media (max-width: 768px) {
+    .lottie-hero-char {
+        width: 180px;
+        height: 180px;
+        bottom: 1rem;
+        left: 1rem;
+    }
+}
+
+/* ========== Buttons ========== */
 .btn-primary-custom,
 .btn-secondary-custom {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    /* Subtle boxy radius */
     padding: 1rem 2.5rem;
     text-decoration: none !important;
     font-weight: 700;
@@ -275,72 +260,27 @@ section {
     color: #000;
 }
 
+.btn-primary-custom:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-5px);
+}
+
 .btn-secondary-custom {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
 
-.btn-primary-custom:hover {
-    background: var(--accent-secondary);
-    border-color: var(--accent-secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 209, 255, 0.3);
-}
-
 .btn-secondary-custom:hover {
-    background: #fff;
-    color: #000;
-    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
 }
 
-/* ========== Toys / Floating Elements ========== */
-.toy {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
-    filter: blur(1px);
-}
-
-.toy-shape-1 {
-    width: 100px;
-    height: 100px;
-    border: 15px solid var(--accent-primary);
-    border-radius: 50%;
-}
-
-.toy-shape-2 {
-    width: 80px;
-    height: 80px;
-    background: var(--accent-secondary);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.toy-shape-3 {
-    width: 60px;
-    height: 60px;
-    border: 10px solid var(--accent-tertiary);
-}
-
-@keyframes float-toy {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-30px) rotate(20deg);
-    }
-}
-
-/* ========== Footer Refinement ========== */
+/* ========== Footer ========== */
 .footer-wrap {
     padding: 120px 0 60px;
     border-top: 1px solid var(--border-glass);
     margin-top: 100px;
-    background: linear-gradient(to top, #000 0%, transparent 100%);
 }
 
 .footer-logo-premium {
@@ -352,92 +292,16 @@ section {
     display: block;
 }
 
-.footer-social-grid {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin: 4rem 0;
-}
-
-.footer-social-link {
-    font-size: 1.8rem;
-    color: var(--text-dim);
-    transition: var(--transition-smooth);
-    position: relative;
-}
-
-.footer-social-link:hover {
-    color: var(--accent-secondary);
-    transform: translateY(-10px);
-}
-
-.footer-bottom-info {
-    border-top: 1px solid var(--border-glass);
-    padding-top: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    text-align: left;
-}
-
-@media (max-width: 768px) {
-    .footer-logo-premium {
-        font-size: 1.5rem;
-    }
-
-    .footer-bottom-info {
-        text-align: center;
-        justify-content: center;
-    }
-}
-
-.btn-primary-custom:hover {
-    background: var(--accent-secondary);
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 209, 255, 0.2);
-}
-
-.btn-secondary-custom {
-    background: transparent;
-    color: #fff;
-    padding: 1.2rem 3rem;
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 1px solid #333;
-    transition: var(--transition-smooth);
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.btn-secondary-custom:hover {
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-/* ========== Hero Section ========== */
-.hero-title {
-    font-size: clamp(4rem, 15vw, 12rem);
-    line-height: 0.8;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-dim);
-    max-width: 600px;
-    margin-top: 4rem;
-    font-weight: 400;
-}
-
-/* ========== Glass Elements ========== */
-.glass-container {
-    background: #111;
-    border: 1px solid #222;
-    backdrop-filter: var(--blur-std);
+/* ========== Cleanup: Remove Old Elements ========== */
+.toy,
+.toy-shape-1,
+.person-toy-carrier,
+.person-head,
+.person-body,
+.toy-in-hand,
+.portal-overlay,
+.portal-swirl {
+    display: none !important;
 }
 
 /* ========== Utility ========== */
@@ -456,15 +320,7 @@ section {
         font-size: 5rem;
     }
 
-    .section-title-large {
-        font-size: 4rem;
-    }
-
     section {
         padding: 100px 0;
-    }
-
-    .feature-card {
-        padding: 2rem;
     }
 }

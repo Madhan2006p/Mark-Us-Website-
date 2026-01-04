@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
+import ThreeScene from './ThreeScene';
 
 const Hero = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -21,7 +22,6 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
-        // GSAP Title Animation
         const ctx = gsap.context(() => {
             gsap.from(".hero-title span", {
                 y: 200,
@@ -57,26 +57,8 @@ const Hero = () => {
     const fmt = (val) => val.toString().padStart(2, "0");
 
     return (
-        <section id="hero" style={{ paddingTop: '25vh', position: 'relative', overflow: 'hidden' }}>
-            {/* Background Toys */}
-            <motion.div 
-                className="toy toy-shape-1"
-                animate={{ y: [0, -40, 0], rotate: [0, 10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                style={{ top: '20%', left: '10%' }}
-            />
-            <motion.div 
-                className="toy toy-shape-2"
-                animate={{ y: [0, 50, 0], rotate: [0, -15, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                style={{ top: '60%', right: '15%' }}
-            />
-            <motion.div 
-                className="toy toy-shape-3"
-                animate={{ y: [0, -30, 0], rotate: [0, 25, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                style={{ bottom: '20%', left: '20%' }}
-            />
+        <section id="hero" style={{ paddingTop: '25vh', position: 'relative', overflow: 'visible', minHeight: '100vh' }}>
+            <ThreeScene />
 
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <div className="row align-items-end">
@@ -90,7 +72,7 @@ const Hero = () => {
                             Association of CT-PG · Kongu Engineering College
                         </motion.div>
 
-                        <h1 className="hero-title" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                        <h1 className="hero-title section-title-large" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                             <span style={{ display: 'block' }}>MARK</span>
                             <span style={{ display: 'block' }}>US – 26</span>
                         </h1>

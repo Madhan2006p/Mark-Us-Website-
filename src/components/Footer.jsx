@@ -14,10 +14,10 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-6">
                             <div className="footer-social-grid d-flex gap-4 justify-content-center justify-content-lg-end" style={{ margin: 0 }}>
-                                <a href="https://www.instagram.com/msc_ss_kec?igsh=MTQ1ZjY4OGFmOTZpOQ==" className="footer-social-link">
+                                <a href="https://www.instagram.com/msc_ss_kec?igsh=MWd2a3V2Z3E1b2RrNQ==" className="footer-social-link">
                                     <i className="bi bi-instagram"></i>
                                 </a>
-                                <a href="#" className="footer-social-link">
+                                <a href="https://www.linkedin.com/in/kec-msc-ctpg?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="footer-social-link">
                                     <i className="bi bi-linkedin"></i>
                                 </a>
                             </div>

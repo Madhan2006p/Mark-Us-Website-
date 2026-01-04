@@ -9,7 +9,7 @@ const Events = () => {
             desc: "Present your research on emerging technologies and innovative ideas.",
             details: ["Individual or Team of 2", "Abstract submission required", "7 mins presentation"],
             time: "10:00 AM",
-            regLink: "https://forms.gle/FTARYdDNY7DP892p6"
+            regLink: "https://docs.google.com/forms/d/e/1FAIpQLSclVrrMnsko42QY8O6Lt8SrmGhWm0COAB2L0bam2taJUz1_Aw/viewform?usp=sharing&ouid=103627080680440398332"
         },
         {
             title: "Project Presentation",
@@ -17,7 +17,7 @@ const Events = () => {
             desc: "Showcase your innovative projects and working prototypes.",
             details: ["Team of up to 3", "Working model preferred", "Interactive demonstration"],
             time: "11:00 AM",
-            regLink: "#"
+            regLink: "https://forms.gle/cH8jzZgkadu49uL5A"
         },
         {
             title: "UI UX",
@@ -25,7 +25,7 @@ const Events = () => {
             desc: "Design intuitive and aesthetically pleasing user interfaces.",
             details: ["Individual Participation", "Focus on UX", "Figma/Adobe XD"],
             time: "01:30 PM",
-            regLink: "#"
+            regLink: "https://forms.gle/TMnAxXoSyhW2t4PE6"
         },
         {
             title: "Tech Quiz",
@@ -33,7 +33,7 @@ const Events = () => {
             desc: "Test your knowledge on the latest trends and fundamentals.",
             details: ["Team of 2", "Multiple Rounds", "Buzzer round"],
             time: "10:30 AM",
-            regLink: "#"
+            regLink: "https://forms.gle/73jbAv4EQMiN2H5A8"
         },
         {
             title: "Code Adapt",
@@ -41,7 +41,7 @@ const Events = () => {
             desc: "A competitive coding challenge to solve logical problems.",
             details: ["Individual Participation", "C/C++/Java/Python", "Efficiency focus"],
             time: "02:00 PM",
-            regLink: "#"
+            regLink: "https://forms.gle/SJP99zsch61Z9ePB6"
         }
     ];
 
@@ -52,7 +52,7 @@ const Events = () => {
             desc: "Experience the thrill of a real-life IPL auction strategy.",
             details: ["Team of 3-4", "Budgeting & Strategy", "Build dream team"],
             time: "10:30 AM",
-            regLink: "#"
+            regLink: "https://forms.gle/W6aJFx5XP96SAkLd9"
         },
         {
             title: "Chill and Skill",
@@ -60,7 +60,7 @@ const Events = () => {
             desc: "Relax and showcase your unique non-technical talents.",
             details: ["Individual Participation", "Fun activities", "Talent showcase"],
             time: "02:00 PM",
-            regLink: "#"
+            regLink: "https://forms.gle/3HnED2yBdQLAwr4PA"
         }
     ];
 

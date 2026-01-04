@@ -12,16 +12,13 @@ const Footer = () => {
                                 A legacy of technical brilliance, fostering collaboration across institutions.
                             </p>
                         </div>
-                        <div className="col-lg-6 text-lg-end">
-                            <div className="footer-social-grid" style={{ margin: 0, justifyContent: 'flex-end' }}>
+                        <div className="col-lg-6">
+                            <div className="footer-social-grid d-flex gap-4 justify-content-center justify-content-lg-end" style={{ margin: 0 }}>
                                 <a href="https://www.instagram.com/msc_ss_kec?igsh=MTQ1ZjY4OGFmOTZpOQ==" className="footer-social-link">
                                     <i className="bi bi-instagram"></i>
                                 </a>
                                 <a href="#" className="footer-social-link">
                                     <i className="bi bi-linkedin"></i>
-                                </a>
-                                <a href="#" className="footer-social-link">
-                                    <i className="bi bi-twitter-x"></i>
                                 </a>
                             </div>
                         </div>

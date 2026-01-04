@@ -70,6 +70,18 @@ const Particles = ({ count = 500 }) => {
 };
 
 const ThreeScene = () => {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Adjust position and scale based on device
+  const groupPosition = isMobile ? [0, 0.5, 0] : [2, 0, 0];
+  const groupScale = isMobile ? 0.6 : 1;
+
   return (
     <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0, pointerEvents: 'none' }}>
       <Canvas shadows dpr={[1, 2]}>
@@ -89,13 +101,13 @@ const ThreeScene = () => {
             polar={[-Math.PI / 4, Math.PI / 4]}
             azimuth={[-Math.PI / 4, Math.PI / 4]}
           >
-            <group position={[2, 0, 0]}> {/* Shift to the right to balance title */}
+            <group position={groupPosition} scale={groupScale}> 
               <TechSculpture />
             </group>
           </PresentationControls>
           <Particles />
           <ContactShadows
-            position={[2, -2.5, 0]}
+            position={[isMobile ? 0 : 2, -2.5, 0]}
             opacity={0.4}
             scale={10}
             blur={2}

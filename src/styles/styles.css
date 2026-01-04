@@ -35,6 +35,10 @@
     cursor: default;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 html.lenis {
     height: auto;
 }
@@ -50,6 +54,7 @@ body {
     overflow-x: hidden;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -173,6 +178,19 @@ section {
     position: relative;
 }
 
+.hero-section {
+    padding-top: 25vh;
+    min-height: 100vh;
+    position: relative;
+    overflow: visible;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 15vh;
+    }
+}
+
 .section-label {
     font-size: 0.7rem;
     font-weight: 700;
@@ -198,6 +216,30 @@ section {
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+}
+
+.event-card {
+    padding: 2.5rem;
+}
+
+.student-box {
+    padding: 2.5rem;
+}
+
+.registration-content-box {
+    padding: 4rem;
+}
+
+@media (max-width: 768px) {
+    .registration-content-box {
+        padding: 2rem;
+    }
+
+    .reg-header-meta {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 1rem;
+    }
 }
 
 .feature-card:hover {

@@ -86,7 +86,7 @@ const Events = () => {
             transition={{ delay: index * 0.1 }}
             className="col-lg-4 col-md-6 mb-4"
         >
-            <div className="feature-card h-100 d-flex flex-column" style={{ padding: '2.5rem' }}>
+            <div className="feature-card event-card h-100 d-flex flex-column">
                 <div className="feature-icon">
                     <i className={`bi ${event.icon}`}></i>
                 </div>

@@ -58,19 +58,7 @@ const Hero = () => {
     const fmt = (val) => val.toString().padStart(2, "0");
 
     return (
-        <section id="hero" className="hero-section" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible' }}>
-            <style>
-                {`
-                .hero-section {
-                    padding-top: 25vh;
-                }
-                @media (max-width: 768px) {
-                    .hero-section {
-                        padding-top: 15vh;
-                    }
-                }
-                `}
-            </style>
+        <section id="hero" className="hero-section">
             <ThreeScene />
 
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>

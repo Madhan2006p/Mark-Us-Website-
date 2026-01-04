@@ -32,23 +32,6 @@ const Registration = () => {
                     >
                         <div className="row g-0">
                             <div className="col-md-12 registration-content-box">
-                                <style>
-                                    {`
-                                    .registration-content-box {
-                                        padding: 4rem;
-                                    }
-                                    @media (max-width: 768px) {
-                                        .registration-content-box {
-                                            padding: 2rem;
-                                        }
-                                        .reg-header-meta {
-                                            flex-direction: column;
-                                            align-items: flex-start !important;
-                                            gap: 1rem;
-                                        }
-                                    }
-                                    `}
-                                </style>
                                 <div className="reg-header-meta" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
                                     <span style={{ fontSize: '0.8rem', letterSpacing: '0.4em', opacity: 0.5 }}>OFFICIAL ADMISSION</span>
                                     <span style={{ color: 'var(--accent-secondary)', fontWeight: '700', fontSize: '0.9rem' }}>REGISTRATION OPEN</span>

@@ -80,7 +80,7 @@ const Coordinators = () => {
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
                                         className="feature-card student-box"
-                                        style={{ height: 'auto', padding: '2rem 3rem' }}
+                                        style={{ height: 'auto' }}
                                     >
                                         <div className="d-flex align-items-center justify-content-between flex-wrap gap-4">
                                             <div>

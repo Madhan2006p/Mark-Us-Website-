@@ -28,11 +28,12 @@ const Preloader = ({ onLoaded }) => {
             height: '100%',
             background: '#070707',
             zIndex: 9999,
-            display: fade ? 'none' : 'flex',
+            display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             opacity: fade ? 0 : 1,
+            pointerEvents: fade ? 'none' : 'auto',
             transition: 'opacity 0.6s ease-in-out'
         }}>
             <h1 style={{ 

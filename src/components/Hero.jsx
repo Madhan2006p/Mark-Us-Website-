@@ -22,9 +22,10 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
+        const isMobile = window.innerWidth < 768;
         const ctx = gsap.context(() => {
             gsap.from(".hero-title span", {
-                y: 200,
+                y: isMobile ? 100 : 200,
                 opacity: 0,
                 duration: 1.5,
                 stagger: 0.2,
@@ -57,7 +58,19 @@ const Hero = () => {
     const fmt = (val) => val.toString().padStart(2, "0");
 
     return (
-        <section id="hero" style={{ paddingTop: '25vh', position: 'relative', overflow: 'visible', minHeight: '100vh' }}>
+        <section id="hero" className="hero-section" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible' }}>
+            <style>
+                {`
+                .hero-section {
+                    padding-top: 25vh;
+                }
+                @media (max-width: 768px) {
+                    .hero-section {
+                        padding-top: 15vh;
+                    }
+                }
+                `}
+            </style>
             <ThreeScene />
 
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>

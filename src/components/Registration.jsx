@@ -27,12 +27,29 @@ const Registration = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="glass-container"
+                        className="feature-card"
                         style={{ maxWidth: '900px', width: '100%', padding: '0' }}
                     >
                         <div className="row g-0">
-                            <div className="col-md-12" style={{ padding: '4rem' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
+                            <div className="col-md-12 registration-content-box">
+                                <style>
+                                    {`
+                                    .registration-content-box {
+                                        padding: 4rem;
+                                    }
+                                    @media (max-width: 768px) {
+                                        .registration-content-box {
+                                            padding: 2rem;
+                                        }
+                                        .reg-header-meta {
+                                            flex-direction: column;
+                                            align-items: flex-start !important;
+                                            gap: 1rem;
+                                        }
+                                    }
+                                    `}
+                                </style>
+                                <div className="reg-header-meta" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
                                     <span style={{ fontSize: '0.8rem', letterSpacing: '0.4em', opacity: 0.5 }}>OFFICIAL ADMISSION</span>
                                     <span style={{ color: 'var(--accent-secondary)', fontWeight: '700', fontSize: '0.9rem' }}>REGISTRATION OPEN</span>
                                 </div>

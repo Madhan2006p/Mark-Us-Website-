@@ -1,0 +1,96 @@
+/*----------------------------------*/
+/*     Clean Futuristic Preloader   */
+/*----------------------------------*/
+
+.ctn-preloader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #23264a, #14162a 70%);
+  z-index: 9000;
+  overflow: hidden;
+}
+
+/* Soft ambient glow */
+.ctn-preloader::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(120,140,255,0.25), transparent 70%);
+  filter: blur(60px);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,100% { transform: scale(1); opacity: .5; }
+  50% { transform: scale(1.2); opacity: .9; }
+}
+
+.animation-preloader {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Pulse Ring Loader */
+.spinner {
+  width: clamp(42px, 8vw, 56px);
+  height: clamp(42px, 8vw, 56px);
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.15);
+  border-top-color: #8fa2ff;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 22px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Loading text */
+.txt-loading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  letter-spacing: .18em;
+  color: #ffffff;
+}
+
+.letters-loading {
+  display: inline-block;
+  animation: fadeUp 1.4s ease-in-out infinite;
+}
+
+.letters-loading:nth-child(n) {
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes fadeUp {
+  0%,100% {
+    opacity: .4;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+}
+
+/* Label */
+.ctn-preloader p {
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+}
+
+/* Exit */
+.ctn-preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s ease;
+}

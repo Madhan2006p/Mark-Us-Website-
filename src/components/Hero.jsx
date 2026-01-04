@@ -113,8 +113,8 @@ const Hero = () => {
 
                     <div className="col-lg-4 mt-5">
                         <div className="d-flex flex-wrap gap-4 mb-5">
-                            <a href="#registration" className="btn-primary-custom" style={{ padding: '1.2rem 3rem' }}>
-                                Register here
+                            <a href="#events" className="btn-primary-custom" style={{ padding: '1.2rem 3rem' }}>
+                                Events
                             </a>
                         </div>
                         

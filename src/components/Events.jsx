@@ -90,7 +90,7 @@ const Events = () => {
                 <div className="feature-icon">
                     <i className={`bi ${event.icon}`}></i>
                 </div>
-                <span style={{ fontSize: '1.1rem', color: 'var(--accent-primary)', fontWeight: '600', marginBottom: '0.5rem' }}>{event.time}</span>
+
                 <h4 style={{ marginBottom: '1rem' }}>{event.title}</h4>
                 <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem', flex: 1, opacity: 0.7 }}>{event.desc}</p>
                 <div style={{ borderTop: '1px solid var(--border-glass)', paddingTop: '1.5rem', marginTop: 'auto' }}>

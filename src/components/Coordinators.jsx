@@ -19,7 +19,7 @@ const Coordinators = () => {
         {
             name: "Naveen Kumar",
             role: "Additionl-Secretary",
-            phone: "+91 99427 49679"
+            phone: "+91 82487 88729"
         }
     ];
 

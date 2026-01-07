@@ -37,7 +37,7 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
-        const eventDate = new Date("January 24, 2026 09:00:00").getTime();
+        const eventDate = new Date("January 20, 2026 23:59:59").getTime();
         const timer = setInterval(() => {
             const now = Date.now();
             const diff = eventDate - now;
@@ -109,6 +109,21 @@ const Hero = () => {
                             An Inter-College Symposium celebrating technical excellence and collaboration. 
                             Join us for an unforgettable experience on January 24, 2026.
                         </motion.p>
+
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                            style={{ 
+                                fontSize: '1.1rem', 
+                                color: '#ff6b6b', 
+                                marginTop: '1rem',
+                                fontWeight: '500',
+                                letterSpacing: '0.05em'
+                            }}
+                        >
+                            Last Date To Register : Jan 20, 2026
+                        </motion.div>
                     </div>
 
                     <div className="col-lg-4 mt-5">

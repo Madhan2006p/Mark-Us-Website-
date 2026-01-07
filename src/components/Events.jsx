@@ -68,18 +68,25 @@ const Events = () => {
     const [targetEvent, setTargetEvent] = useState("");
 
     const handleRegistration = (e, event) => {
-        if (!event.regLink || event.regLink === "#") return;
-        e.preventDefault();
+        if (!event.regLink || event.regLink === "#") {
+            e.preventDefault();
+            return;
+        }
+        // Remove e.preventDefault() to let the <a> tag handle the navigation cleanly.
+        // This ensures iOS and other mobile browsers don't block the popup.
+
         setTargetEvent(event.title);
         setRedirecting(true);
+
+        // Automatically hide the loading overlay after a few seconds
+        // so the user doesn't come back to a stuck spinner.
         setTimeout(() => {
-            window.open(event.regLink, "_blank");
             setRedirecting(false);
-        }, 1500);
+        }, 2000);
     };
 
     const EventCard = ({ event, index }) => (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -94,8 +101,10 @@ const Events = () => {
                 <h4 style={{ marginBottom: '1rem' }}>{event.title}</h4>
                 <p style={{ fontSize: '0.9rem', marginBottom: '1.5rem', flex: 1, opacity: 0.7 }}>{event.desc}</p>
                 <div style={{ borderTop: '1px solid var(--border-glass)', paddingTop: '1.5rem', marginTop: 'auto' }}>
-                    <a 
+                    <a
                         href={event.regLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={(e) => handleRegistration(e, event)}
                         className="btn-primary-custom w-100"
                         style={{ padding: '0.8rem', fontSize: '0.8rem' }}
@@ -136,19 +145,19 @@ const Events = () => {
 
             <AnimatePresence>
                 {redirecting && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         className="redirect-overlay active"
-                        style={{ 
-                            position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', 
-                            background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(20px)', 
-                            zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' 
+                        style={{
+                            position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+                            background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(20px)',
+                            zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center'
                         }}
                     >
                         <div className="text-center">
-                            <motion.div 
+                            <motion.div
                                 animate={{ rotate: 360 }}
                                 transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
                                 style={{ width: 50, height: 50, border: '2px solid var(--accent-secondary)', borderTopColor: 'transparent', borderRadius: '50%', margin: '0 auto 20px' }}

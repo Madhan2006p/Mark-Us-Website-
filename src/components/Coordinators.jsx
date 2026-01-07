@@ -4,22 +4,22 @@ import { Phone, Users } from 'lucide-react';
 
 const Coordinators = () => {
     const faculty = {
-        name: "Prof. Arumugam",
-        role: "Event Convenor",
+        name: "Mr.M.Arumugam",
+        role: "Faculty Coordinator",
         desc: "Event logistics and organizational vision of Markus-26 with decades of expertise.",
-        phone: "+91 91599 06637"
+        phone: "+91 98427 78152"
     };
 
     const students = [
         {
             name: "Rithanya Paramashivam",
-            role: "Student Secretary",
+            role: "Secretary",
             phone: "+91 93457 48455"
         },
         {
             name: "Naveen Kumar",
-            role: "Student Secretary",
-            phone: "+91 99427 49679"
+            role: "Additionl-Secretary",
+            phone: "+91 82487 88729"
         }
     ];
 
@@ -27,14 +27,14 @@ const Coordinators = () => {
         <section id="coordinators">
             <div className="container">
                 <div className="section-header">
-                    <motion.span 
+                    <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         className="section-label"
                     >
                         Management
                     </motion.span>
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         className="section-title-large"
@@ -46,13 +46,13 @@ const Coordinators = () => {
                 <div className="row g-5">
                     {/* Faculty Section */}
                     <div className="col-lg-5">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             className="feature-card faculty-box"
-                            style={{ 
-                                background: 'rgba(255, 255, 255, 0.05)', 
+                            style={{
+                                background: 'rgba(255, 255, 255, 0.05)',
                                 border: '2px solid var(--accent-primary)',
                                 height: 'auto'
                             }}
@@ -74,7 +74,7 @@ const Coordinators = () => {
                         <div className="row g-4">
                             {students.map((student, index) => (
                                 <div className="col-md-12" key={index}>
-                                    <motion.div 
+                                    <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
